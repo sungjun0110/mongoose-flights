@@ -1,0 +1,23 @@
+<%- include('../partial/header') %> 
+<div id="flight-tiles">
+    <table id="header-tile">
+        <thead>
+                <tr><th>Airline</th></tr>
+                <tr><th>Airport</th></tr>
+                <tr><th>Flight Number</th></tr>
+                <tr><th>Depart</th></tr>
+        </thead>
+    </table>
+    <!-- AAU, I want to view a list of all flights (index view) that displays each flight's airline, airport, flight no., and departure date/time. -->
+    <% flights.forEach(flight => { %>
+        <a href="/flights/<%= flight.id %>" class="element-tile">
+            <table>
+                <tr><td><%= flight.airline %></td></tr>
+                <tr><td><%= flight.airport %></td></tr>
+                <tr><td><%= flight.flightNo %></td></tr>
+                <tr><td><%= flight.departs %></td></tr>
+            </table>
+        </a>
+    <% }); %> 
+</div>    
+<%- include('../partial/footer') %> 

@@ -1,8 +1,204 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 90vw;
+  margin: 0 auto;
+  font: 14px 'Baloo Bhaijaan 2', cursive;
+}
+
+h1 {
+  margin-left: 30px;
 }
 
 a {
   color: #00B7FF;
+}
+
+table {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+th, td {
+  width: auto;
+  text-align: center;
+  padding: 3px 10px;
+  margin: 0;
+}
+
+.element-tile td {
+  width: calc(45vw - 130px);
+  min-width: 400px;
+}
+
+nav {
+  background-color: rgba(129, 176, 218, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 10px 0;
+  top: 0;
+  width: 90vw;
+  backdrop-filter: blur(10px);
+}
+
+nav>a {
+  color: black;
+  text-decoration: none;
+  padding-right: 30px;
+}
+
+main {
+  margin-top: 80px;
+}
+
+#new-flight {
+  background-color: #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#new-flight label {
+  display: inline-block;
+  width: 120px;
+  font-size: 15px;
+}
+
+#header-tile {
+  background-color: rgba(14, 2, 43, 0.5);
+  color: #eee;
+  width: 150px;
+}
+
+#flight-tiles {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 0 0 50%;
+}
+
+#flight-detail label {
+  display: inline-block;
+  width: 120px;
+  font-size: 15px;
+}
+
+#flight-detail div {
+  display: inline-block;
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.element-tile {
+  text-decoration: none;
+  color: black;
+}
+
+#flight-detail {
+  display: block;
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#destination-tile {
+  background-color: #bbb;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+#tickets-screen {
+  background-color: #1201418a;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#tickets-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+}
+
+#tickets-info {
+  background-color: rgb(235, 235, 0);
+  text-align: center;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.tickets {
+  text-align: center;
+  position: relative;
+  background-color: rgb(89, 73, 126);
+  color: white;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+.delete {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background-color: rgba(255, 0, 0, 0.2);
+  transition: all .25s ease-out;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+.delete p {
+  color: #ddd;
+}
+
+.delete:hover {
+  opacity: 1;
+}
+
+.delete input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #ddd;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#new-ticket {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(14, 2, 43, 0.5);
+  position: relative;
+  padding: 5px;
+  margin: 0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.25s all ease-out;
+}
+
+#new-ticket:hover{
+  font-size: 25px;
+}
+
+#new-ticket div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: #ddd;  
 }

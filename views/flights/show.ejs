@@ -1,0 +1,69 @@
+<%- include('../partial/header') %> 
+
+<!-- AAU, when viewing the list of flights, I want to click on a "detail" link displayed next to each flight to view all of the properties for that flight -->
+<section id="show-page">
+    <div id="flight-detail">
+        <label>Airline:</label>
+        <div><%= flight.airline %></div><br>
+        <label>Airport:</label>
+        <div><%= flight.airport %></div><br>
+        <label>Flight Number:</label>
+        <div><%= flight.flightNo %></div><br>
+        <label>Departure:</label>
+        <div><%= flight.departs %></div><br>
+        <label>Destination:</label>
+        <div>
+            <% flight.destinations.forEach(dest => { %>
+                <div id="destination-tile">
+                    Airport:
+                    <%= dest.airport %>
+                    <br>
+                    Arrival: 
+                    <%= dest.arrival %>
+                </div>
+                <br>
+            <% }) %>
+        </div>
+
+        <!-- AAU, when viewing the details page (show view) for a flight, I want to be able to add a destination for that flight, including its arrival date/time & one of the established airport codes -->
+        <form id="arrival-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+            <label>Airport:
+                <select name="airport">
+                    <%- airports.map(airport => `<option value="${airport}">${airport}</option>`).join('') %>
+                </select>
+            </label>
+            <label>Arrival:
+                <input type="datetime-local" name="arrival" required>
+            </label><br>
+            <input type="submit" value="Add Destination">
+        </form>
+    
+    </div>
+    <br>
+    <div id="tickets-screen">
+        Tickets:
+        <div id="tickets-flex">
+            <div id="tickets-info">
+                Seat<br>
+                Price
+            </div>
+            <% if (tickets) { tickets.forEach(ticket => { %>
+                <div class="tickets">
+                    <%= ticket.seat %><br>
+                    <%= ticket.price %> 
+                    <div class="delete">
+                        <form method="POST" action="/tickets/<%= ticket._id %>?_method=DELETE">
+                            <input type="submit" value="x">
+                        </form>
+                    </div>
+                </div>
+            <% })} %> 
+            <a id="new-ticket" href="/tickets/<%= flight._id %>/new"><div>+</div></a>
+        </div>
+    </div>
+</section><br><br>
+
+
+
+
+<%- include('../partial/footer') %> 
